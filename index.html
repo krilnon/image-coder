@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<link href="index.css" rel="stylesheet" type="text/css">
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="index.js"></script>
+	</head>
+
+	<body>
+		<h1>Code Editor with Images</h1>
+		<pre id="editor" contenteditable="true">
+// techcash, Citi virtual credit card
+
+var
+	techcash = require('techcash'),
+    citiAuth = require('citi-auth'),
+    virtualCC = require('citi-virtual-card-api')
+
+var
+	transactions = []
+
+main()
+
+function main(){
+	refreshTechCashInfo()
+
+    // setInterval(refreshTechCashInfo, 60 * 60 * 1000)
+}
+
+function refreshTechCashInfo(){
+  var loginInfo = techcash.loginInfo({ user: 'tim', pass: 'beaver' })
+
+  // login server is determined by username
+  console.log('logging into techcash at address: ', loginInfo.server)
+
+  techcash.getTransactions(loginInfo, 100, function(e){
+   	e.data.transaction 
+  })
+
+  techcash.addMoney(5, loginInfo)
+
+}
+
+		</pre>
+	</body>
+</html>
